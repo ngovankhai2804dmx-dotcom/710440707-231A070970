@@ -1,0 +1,22 @@
+body {
+  font-family: Arial;
+  margin: 0;
+  padding: 20px;
+}
+
+nav a {
+  margin: 10px;
+  text-decoration: none;
+  color: blue;
+}
+
+#list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.product {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
