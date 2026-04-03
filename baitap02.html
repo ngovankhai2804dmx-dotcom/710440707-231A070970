@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 2</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+</nav>
+
+<h2>Đăng ký</h2>
+
+<form onsubmit="handleSubmit(event)">
+  <input type="text" id="name" placeholder="Tên"><br><br>
+  <input type="email" id="email" placeholder="Email"><br><br>
+  <input type="password" id="password" placeholder="Mật khẩu"><br><br>
+
+  <label>
+    <input type="checkbox" id="agree"> Đồng ý điều khoản
+  </label><br><br>
+
+  <button type="submit">Đăng ký</button>
+</form>
+
+<p id="msg"></p>
+
+<script src="js/script.js"></script>
+</body>
+</html>

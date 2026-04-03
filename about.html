@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Lý thuyết</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+</nav>
+
+<h2>PHẦN LÝ THUYẾT</h2>
+
+<!-- CÂU 1 -->
+<h3>1. position: relative vs absolute</h3>
+
+<p><b>position: relative:</b></p>
+<ul>
+  <li>Vẫn nằm trong luồng (flow) bình thường</li>
+  <li>Dịch chuyển bằng top, left nhưng giữ vị trí gốc</li>
+</ul>
+
+<p><b>position: absolute:</b></p>
+<ul>
+  <li>Bị loại khỏi flow</li>
+  <li>Định vị theo phần tử cha có position</li>
+</ul>
+
+<p><b>Ứng dụng:</b></p>
+<ul>
+  <li>relative: làm mốc cho absolute</li>
+  <li>absolute: overlay, badge, text trên ảnh</li>
+</ul>
+
+<p><b>Responsive:</b></p>
+<ul>
+  <li>absolute dễ vỡ layout nếu dùng px cố định</li>
+  <li>Nên dùng %, vw, vh và kết hợp Flexbox/Grid</li>
+</ul>
+
+<p><b>Deploy:</b></p>
+<ul>
+  <li>Không ảnh hưởng trực tiếp bởi hosting</li>
+  <li>Nhưng dễ lỗi trên mobile nếu dùng sai</li>
+</ul>
+
+<hr>
+
+<!-- CÂU 2 -->
+<h3>2. Domain, Hosting và DNS</h3>
+
+<p><b>Quy trình:</b></p>
+<ul>
+  <li>Mua domain</li>
+  <li>Deploy website</li>
+  <li>Cấu hình DNS (A, CNAME)</li>
+</ul>
+
+<p><b>DNS:</b></p>
+<ul>
+  <li>Chuyển domain → IP</li>
+  <li>Kết nối người dùng với server</li>
+</ul>
+
+<p><b>Công cụ deploy:</b></p>
+<ul>
+  <li>GitHub Pages</li>
+  <li>Netlify</li>
+  <li>Vercel</li>
+</ul>
+
+<p><b>Rủi ro:</b></p>
+<ul>
+  <li>Domain takeover</li>
+  <li>Không có HTTPS</li>
+  <li>Lộ API key</li>
+</ul>
+
+<hr>
+
+<!-- CÂU 3 -->
+<h3>3. var, let, const</h3>
+
+<p><b>Scope:</b></p>
+<ul>
+  <li>var: function scope</li>
+  <li>let, const: block scope</li>
+</ul>
+
+<p><b>Hoisting:</b></p>
+<ul>
+  <li>var: undefined</li>
+  <li>let, const: lỗi (TDZ)</li>
+</ul>
+
+<p><b>Lỗi thường gặp:</b></p>
+<pre>
+for (var i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), 1000);
+}
+// Kết quả: 3 3 3
+</pre>
+
+<p><b>Fix:</b></p>
+<pre>
+for (let i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), 1000);
+}
+// Kết quả: 0 1 2
+</pre>
+
+<p><b>Debug:</b></p>
+<ul>
+  <li>Dùng DevTools (F12)</li>
+  <li>Đặt breakpoint</li>
+  <li>Quan sát scope</li>
+</ul>
+
+<hr>
+
+<!-- CÂU 4 -->
+<h3>4. Event Delegation</h3>
+
+<p><b>Khái niệm:</b></p>
+<ul>
+  <li>Gắn event vào phần tử cha</li>
+  <li>Dùng event bubbling để xử lý con</li>
+</ul>
+
+<p><b>Ví dụ:</b></p>
+<pre>
+list.addEventListener('click', (e) => {
+  if (e.target.classList.contains('item')) {
+    console.log('Clicked');
+  }
+});
+</pre>
+
+<p><b>Lợi ích:</b></p>
+<ul>
+  <li>Giảm số lượng event listener</li>
+  <li>Hỗ trợ dynamic content</li>
+  <li>Tăng hiệu suất</li>
+</ul>
+
+<p><b>Kết hợp HTML/CSS:</b></p>
+<ul>
+  <li>Dùng class để xử lý hành vi</li>
+  <li>Dùng data-* để lưu dữ liệu</li>
+</ul>
+
+</body>
+</html>
